@@ -15,11 +15,11 @@ begin
     plottype="streamf"
   pnew =200  
     print("plot "+plottype)
-;  fils=systemfunc ("ls /work3/mlo/cesm1/archive/CTR_B_2000_CAM5/atm/hist/*.nc |head -n 1199 |tail -n 600")
-;  filsExp=systemfunc ("ls /work3/mlo/cesm1/archive/IRR_B_2000_CAM5/atm/hist/*.nc |head -n 1199 |tail -n 600")
+  fils=systemfunc ("ls /work3/mlo/cesm1/archive/CTR_B_2000_CAM5/atm/hist/*.nc |head -n 1199 |tail -n 600")
+  filsExp=systemfunc ("ls /work3/mlo/cesm1/archive/IRR_B_2000_CAM5/atm/hist/*.nc |head -n 1199 |tail -n 600")
 
-  fils=systemfunc ("ls /work3/mlo/cesm1/archive/F2000_CAM5/atm/hist/*.nc |head -n 719 |tail -n 360")
-  filsExp=systemfunc ("ls /work3/mlo/cesm1/archive/F2000_CAM5_EXP1/atm/hist/*.nc |head -n 719 |tail -n 360")
+;  fils=systemfunc ("ls /work3/mlo/cesm1/archive/F2000_CAM5/atm/hist/*.nc |head -n 719 |tail -n 360")
+;  filsExp=systemfunc ("ls /work3/mlo/cesm1/archive/F2000_CAM5_EXP1/atm/hist/*.nc |head -n 719 |tail -n 360")
 ;  fils=systemfunc ("ls /work3/mlo/cesm1/archive/CTR_B_2000_CAM5/atm/hist/*.nc |head -n 1199 |tail -n 600")
 ;  filsExp=systemfunc ("ls /work4/L.r02229011/IRR_B_2000_CAM5_IndiaWinterOnly_New/atm/hist/*.nc |head -n 1199 |tail -n 600")
 ;  fils=systemfunc ("ls /raid2/share/mlo/CTR_B_2000_CAM5/lnd/hist/*.nc |tail -n 253|head -n 240")
@@ -264,7 +264,7 @@ res@mpMinLatF       = 20
   siglvl = 0.1
     ;tavg=dim_avg_n_Wrap(Var(600:1199,:,:),0) ;time avg
     ;tavgExp=dim_avg_n_Wrap(VarExp(600:1199,:,:),0)
-    years=30
+    years=50
 vdim=dimsizes(Var)
 print(vdim)
 t=new((/12,years,vdim(2),vdim(3)/),"float")
@@ -411,8 +411,8 @@ end do
     plotsig=gsn_contour_shade(plotsig,0.,siglvl,resdot)
 
     res@cnLevelSelectionMode ="ManualLevels"
-    maxLevel=30.
-    minLevel=-30.
+    maxLevel=50.
+    minLevel=-50.
     res@cnMaxLevelValF  = maxLevel
     res@cnMinLevelValF  = minLevel
     res@cnLevelSpacingF = (maxLevel-minLevel)/20.

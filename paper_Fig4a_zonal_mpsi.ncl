@@ -115,9 +115,8 @@ endlat=30
     VarClima=clmMonTLL(VarAno(:,:,:))
     DJF= dim_avg_n_Wrap(VarClima((/0,1,2/),:,:),0)
     JFM= dim_avg_n_Wrap(VarClima((/1,2,3/),:,:),0)
-
     JFM(:,:)=JFM(:,:)/1000000000.
-
+    JFM@units="10~S~9~N~"+JFM@units
     JJA= dim_avg_n_Wrap(VarClima((/6,7,8/),:,:),0)
     MAM= dim_avg_n_Wrap(VarClima((/3,4,5/),:,:),0)
     SON= dim_avg_n_Wrap(VarClima((/9,10,11/),:,:),0)
